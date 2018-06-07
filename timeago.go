@@ -38,7 +38,7 @@ func FromDuration(d time.Duration) string {
 	hours := div(minutes, 60)
 
 	if minutes < day {
-		return fmt.Sprintf("about %s", pluralize(hours, "hour"))
+		return fmt.Sprintf("%s", pluralize(hours, "hour"))
 	}
 
 	if minutes < (42 * hour) {
@@ -54,11 +54,11 @@ func FromDuration(d time.Duration) string {
 	months := div(days, 30)
 
 	if minutes < (45 * day) {
-		return "about 1 month"
+		return "1 month"
 	}
 
 	if minutes < (60 * day) {
-		return "about 2 months"
+		return "2 months"
 	}
 
 	if minutes < year {
